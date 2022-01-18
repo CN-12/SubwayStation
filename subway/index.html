@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>부산 지하철</title>
+</head>
+<body>
+    <style>
+        * {
+            text-align: center;
+            margin: 5px auto;
+        }
+    </style>
+    <input type="button" onclick="ALL()" value="전체 보기"></input>
+    <select name="subway-type" onchange="subwayselcet(this)">
+        <option value="1호선">1호선</option>
+        <option value="2호선">2호선</option>
+        <option value="3호선">3호선</option>
+        <option value="4호선">4호선</option>
+        <option value="동해선">동해선</option>
+    </select>
+    <div id="box" class="box">전체보기</div>
+    <img id="source" src="static\1호선.svg" width="1000" height="800">
+    <script>
+        function ALL() {
+            document.getElementById("box").innerText = "전체보기";
+            document.getElementById("source").src = "static/all.png";
+        }
+        function subwayselcet(price) {
+            const value = price.value;
+            document.getElementById("box").innerText = value;
+            const p = "" +'static\\' + value + ".svg" ;
+            console.log(p)
+            document.getElementById("source").src = p;
+        }
+    </script>           
+</body>
+</html>
